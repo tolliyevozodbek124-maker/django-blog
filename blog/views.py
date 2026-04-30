@@ -10,6 +10,10 @@ def articles_page(request: HttpRequest) -> HttpResponse:
     return render(request=request, template_name='articles.html')
 
 
+def article_details_page(request: HttpRequest, slug: str) -> HttpResponse:
+    return render(request=request, template_name='details.html')
+
+
 def about_page(request: HttpRequest) -> HttpResponse:
     return render(request=request, template_name='about.html')
 

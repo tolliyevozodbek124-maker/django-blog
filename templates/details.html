@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+{% endblock styles %}
+
+{% block content %}
+<div class="container article-detail">
+
+    <!-- ARTICLE HEADER -->
+    <header class="article-header">
+        <h1 class="article-title">
+            Understanding Microservices Architecture
+        </h1>
+
+        <div class="article-meta">
+            <span>By Diyorbek Jumanov</span>
+            <span>•</span>
+            <span>Jan 10, 2026</span>
+            <span>•</span>
+            <span>8 min read</span>
+        </div>
+    </header>
+
+
+    <!-- FEATURE IMAGE (optional) -->
+    <div class="article-image">
+        <img src="https://via.placeholder.com/900x400" alt="Article Image">
+    </div>
+
+
+    <!-- ARTICLE CONTENT -->
+    <article class="article-content">
+
+        <p>
+            Microservices architecture is an approach to building software systems as a collection
+            of small, independently deployable services.
+        </p>
+
+        <h2>What is Microservices?</h2>
+        <p>
+            Each service is responsible for a specific business capability and communicates
+            with others via APIs.
+        </p>
+
+        <h3>Advantages</h3>
+        <ul>
+            <li>Scalability</li>
+            <li>Independent deployment</li>
+            <li>Technology flexibility</li>
+        </ul>
+
+        <h3>Challenges</h3>
+        <p>
+            Distributed systems introduce complexity such as network latency,
+            data consistency, and monitoring.
+        </p>
+
+        <blockquote>
+            “Microservices are not a silver bullet — they introduce trade-offs.”
+        </blockquote>
+
+        <p>
+            Choosing microservices should be driven by business needs and system complexity.
+        </p>
+
+    </article>
+
+
+    <!-- TAGS -->
+    <div class="article-tags">
+        <a href="#">microservices</a>
+        <a href="#">architecture</a>
+        <a href="#">scalability</a>
+    </div>
+
+</div>
+{% endblock content %}

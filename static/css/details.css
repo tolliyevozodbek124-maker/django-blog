@@ -1,0 +1,126 @@
+/* =========================
+   ARTICLE DETAIL
+========================= */
+
+.article-detail {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+.article-header {
+    margin-bottom: var(--space-lg);
+}
+
+.article-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--space-sm);
+}
+
+/* META */
+.article-meta {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* IMAGE */
+.article-image {
+    margin-bottom: var(--space-lg);
+}
+
+.article-image img {
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+/* =========================
+   CONTENT (CRITICAL PART)
+========================= */
+
+.article-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+/* PARAGRAPH */
+.article-content p {
+    margin-bottom: var(--space-lg);
+}
+
+/* HEADINGS */
+.article-content h2 {
+    font-size: 1.6rem;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+}
+
+.article-content h3 {
+    font-size: 1.25rem;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+/* LIST */
+.article-content ul {
+    margin-bottom: var(--space-lg);
+    padding-left: 20px;
+}
+
+.article-content li {
+    margin-bottom: 6px;
+}
+
+/* BLOCKQUOTE */
+.article-content blockquote {
+    border-left: 4px solid var(--color-primary);
+    padding-left: var(--space-md);
+    margin: var(--space-lg) 0;
+    font-style: italic;
+    color: var(--color-muted);
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.article-tags {
+    margin-top: var(--space-xl);
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.article-tags a {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.article-tags a:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .article-title {
+        font-size: 1.7rem;
+    }
+
+    .article-content {
+        font-size: 1rem;
+    }
+}
