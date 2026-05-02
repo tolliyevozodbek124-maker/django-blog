@@ -15,6 +15,12 @@ class GetArticlesQueryForm(forms.Form):
 
         return data['q'].lower()
     
+class WriteArticleForm(forms.Form):
+    title = forms.CharField(min_length=5)
+    content = forms.CharField(required=False)
+
+
+    
 
 class RegisterForm(forms.Form):
     email = forms.EmailField()
