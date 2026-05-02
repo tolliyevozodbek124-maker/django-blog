@@ -40,3 +40,13 @@ class Database:
         }
         articles.append(new_article)
         self.write({"articles": articles})
+
+    def find_articles_by_title(self, q):
+        data = self.read()
+        articles = []
+        for article in data['articles']:
+            if q.lower() in article['title'].lower():
+                articles.append(article)
+        
+        return articles
+    

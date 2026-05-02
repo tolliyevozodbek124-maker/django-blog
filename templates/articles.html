@@ -4,10 +4,34 @@
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/articles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 {% endblock styles %}
 
 {% block content %}
     <div class="container">
+
+        <form method="get" action="{% url 'articles' %}" class="search-form mb-4">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search articles..." value="{{ request.GET.q }}">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+
+        {% if form %}
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    <ul>
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endif %}
 
         <h2>All Articles</h2>
 

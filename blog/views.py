@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
 
 from .db import Database
+from .forms import GetArticlesQueryForm
 
 
 db = Database()
@@ -13,8 +14,16 @@ def home_page(request: HttpRequest) -> HttpResponse:
 
 
 def articles_page(request: HttpRequest) -> HttpResponse:
+    form = GetArticlesQueryForm(request.GET)
+
+    if form.is_valid():
+        data = form.cleaned_data
+
+        articles = db.find_articles_by_title(data['q'])
+        
+        return render(request=request, template_name='articles.html', context={'articles': articles})
     articles = db.get_articles()
-    return render(request=request, template_name='articles.html', context={'articles': articles})
+    return render(request=request, template_name='articles.html', context={'articles': articles, 'form': form})
 
 
 def article_details_page(request: HttpRequest, slug: str) -> HttpResponse:
